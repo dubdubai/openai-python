@@ -771,10 +771,10 @@ class APIRequestor:
         # In the future, we might add a "status" parameter to errors
         # to better handle the "error while streaming" case.
         stream_error = stream and "error" in resp.data
-        if stream_error or not 200 <= rcode < 300:
-            raise self.handle_error_response(
-                rbody, rcode, resp.data, rheaders, stream_error=stream_error
-            )
+        # if stream_error or not 200 <= rcode < 300:
+        #     raise self.handle_error_response(
+        #         rbody, rcode, resp.data, rheaders, stream_error=stream_error
+        #     )
         return resp
 
 
